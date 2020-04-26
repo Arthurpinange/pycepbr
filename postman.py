@@ -8,11 +8,12 @@ class Address:
         pass
 
     @staticmethod
-    def get_address(cep):
+    def get_address(cep: str) -> dict:
         """
         returns the address from the zip code
+        retorna o endereço do CEP
         :param cep:
-        :return:
+        :return dict:
         """
         url = 'http://viacep.com.br/ws/'+cep+'/json/'
         req = requests.get(url)
@@ -20,10 +21,10 @@ class Address:
         if req.status_code == 200:
             json_data = json.loads(req.content)
             return json_data
-        return
+        return {}
 
     @staticmethod
-    def get_street(public_place):
+    def get_street(public_place: dict) -> dict:
         """
         returns all streets and zip codes from the neighborhood
         :param public_place:
@@ -39,4 +40,4 @@ class Address:
         if req.status_code == 200:
             json_data = json.loads(req.content)
             return json_data
-        return
+        return {}
