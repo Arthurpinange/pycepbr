@@ -1,4 +1,4 @@
-import json
+import jsons as json
 import requests
 
 

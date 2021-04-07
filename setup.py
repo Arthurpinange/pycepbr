@@ -1,11 +1,16 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(name='pycepbr',
-      versão='1.0',
+      version='1.0',
       description=' Consulta CEPs de todo território brasileiro',
       url='https://github.com/Arthurpinange/pycepbr',
       author='Arthur Pinangé',
       author_email='arthur.pinange@gmail.com',
       license='MIT',
-      packages=['pycepbr'],
+      packages=find_packages(),
       zip_safe=False)
+
+install_requires = ['jsons', 'requests']
+
+if __name__ == '__main__':
+    setup(**setup_args, install_requires=install_requires)
